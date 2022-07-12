@@ -21,17 +21,14 @@
     "axios": "^0.27.2",
     "framer-motion": "^6",
     "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.18.1",
     "next": "12.2.2",
-    "nodemailer": "^6.7.7",
     "nookies": "^2.5.2",
-    "password-generator": "^2.3.2",
     "postgres": "^3.2.4",
+    "mysql": "^2.18.1",
     "prisma": "^4.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.33.1",
-    "uuid": "^8.3.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
