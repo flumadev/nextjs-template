@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -42,7 +41,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className={styles.main}>
+    <div style={{ maxWidth: 400, margin: '25vh auto' }}>
       <form onSubmit={handleSubmit(handleLogin)}>
         <Heading as="h3" size="lg">
           Painel Admin

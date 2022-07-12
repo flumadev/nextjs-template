@@ -8,34 +8,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const prisma = new PrismaClient();
-    const { email, password }: User = req.body;
-    console.log(req.body);
+    var token = jwt.sign(
+      { email: 'email@email.com', name: 'user.name' },
+      'pacoca'
+    );
 
-    const user = await prisma.user.findUniqueOrThrow({
-      where: {
-        email: email,
-      },
+    return res.json({
+      token: token,
     });
-
-    if (!user) {
-      return res.status(404).json({
-        message: 'User not found',
-      });
-    }
-
-    if (user?.password === password) {
-      console.log(user);
-
-      var token = jwt.sign({ email: user.email, name: user.name }, 'pacoca');
-
-      return res.json({
-        token: token,
-      });
-    } else {
-      return res.status(401).json({
-        message: 'Email/Password',
-      });
-    }
   }
 }
